@@ -1,0 +1,214 @@
+.ai-reply-buttons {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, minmax(90px, 1fr));
+  gap: 8px;
+  padding: 4px 16px;
+  margin-top: 4px;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ai-reply-button {
+  background: transparent;
+  border: 1px solid #2f3336;
+  border-radius: 16px;
+  padding: 6px 12px;
+  color: rgb(29, 155, 240);
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  min-width: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 32px;
+}
+
+.ai-reply-button:hover {
+  background-color: rgba(29, 155, 240, 0.1);
+}
+
+.ai-reply-button span {
+  font-size: 14px;
+}
+
+.ai-loading-indicator {
+  color: rgb(29, 155, 240);
+  font-size: 13px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-loading-indicator::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgb(29, 155, 240);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.ai-error-message {
+  color: rgb(244, 33, 46);
+  background-color: rgba(244, 33, 46, 0.1);
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-error-message::before {
+  content: '⚠️';
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .ai-error-message {
+    background-color: rgba(244, 33, 46, 0.1);
+  }
+}
+
+/* LinkedIn specific styles */
+.ai-reply-buttons-wrapper.linkedin {
+  margin: 4px 0;
+  padding: 8px 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+/* Adjust button styles for LinkedIn */
+.linkedin .ai-reply-buttons {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, minmax(80px, 1fr));
+  gap: 6px;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.linkedin .ai-reply-button {
+  background-color: transparent;
+  border: 1px solid #0a66c2;
+  border-radius: 16px;
+  color: #0a66c2;
+  font-size: 12px;
+  padding: 4px 8px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.linkedin .ai-reply-button:hover {
+  background-color: rgba(10, 102, 194, 0.1);
+  text-decoration: none;
+}
+
+.linkedin .ai-reply-button span {
+  font-size: 12px;
+}
+
+/* Dark theme support for LinkedIn */
+@media (prefers-color-scheme: dark) {
+  .ai-reply-buttons-wrapper.linkedin {
+    background-color: #1d2226;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .linkedin .ai-reply-button {
+    border-color: #70b5f9;
+    color: #70b5f9;
+  }
+  
+  .linkedin .ai-reply-button:hover {
+    background-color: rgba(112, 181, 249, 0.1);
+  }
+}
+
+/* Loading and error states for LinkedIn */
+.linkedin .ai-loading-indicator {
+  color: #0a66c2;
+  margin: 8px 16px;
+}
+
+.linkedin .ai-error-message {
+  margin: 8px 16px;
+  background-color: #fef0f0;
+  border: 1px solid #d11124;
+  color: #d11124;
+  border-radius: 4px;
+}
+
+.limit-reached-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.modal-content p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.modal-content button {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-content button:hover {
+  transform: scale(1.05);
+} 

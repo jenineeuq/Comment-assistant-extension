@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "X AI Reply Generator",
+  "version": "1.0",
+  "description": "Generate AI replies for X posts with quick reaction buttons",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "identity"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*", 
+        "https://x.com/*",
+        "https://www.linkedin.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "oauth2": {
+    "client_id": "781035868856-g8m2nfmf22cm7fqv78i3pgkk3e3q3qto.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+} 
