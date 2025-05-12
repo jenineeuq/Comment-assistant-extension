@@ -84,7 +84,7 @@ With one click, users get **relevant, personalized comments** tailored to the co
 
 **Jenifa S Joanna**  
 📧 jenifasjoanna22@gmail.com  
-🔗 [LinkedIn](#) | [GitHub](#)
+🔗 [LinkedIn](https://www.linkedin.com/in/jenifa-s-joanna-a7483325b/) | [GitHub](https://github.com/jenineeuq)
 
 ---
 
